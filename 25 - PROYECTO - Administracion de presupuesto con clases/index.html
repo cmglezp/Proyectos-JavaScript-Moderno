@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gasto Semanal</title>
+
+    <link rel="stylesheet" href="normalize.css">
+</head>
+<body>
+
+        <header class="header">
+            <h1 class = header-title>Gasto Semanal</h1>
+        </header>
+
+
+
+        <div class="container">
+            <form action="#" class = 'container__formulario'>
+                <span class="formulario-title">Anade tus gastos aqui</span>
+
+                <label for="gasto" class="formulario-label">Gasto:<br>
+                    <input type="text" name="gastos" id="gasto" class="label-input" placeholder = 'Nombre Gasto'>
+                </label>
+                <label for="cantidad" class="formulario-label">Cantidad:<br>
+                    <input type="number" min = '0' name="gastos" id="cantidad" class="label-input" placeholder = 'Cantidad en $'>
+                </label>
+
+                <input type="submit" value="Agregar" class = 'formulario-submit'>
+
+            </form>
+
+
+            <div class="container__list">
+                <span class="list-title">Listado</span>
+                <div class = 'list'>
+                    <ul class="list-group"></ul>
+                </div>
+
+                <div class = 'list-menu'>
+                    <span id = "presupuesto">Presupesto: $&nbsp;<span></span></span>
+                    <span id = "restante" data-color = 'bastante-capital'>Restante: $&nbsp;<span></span></span>
+                </div>
+            </div>
+        </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

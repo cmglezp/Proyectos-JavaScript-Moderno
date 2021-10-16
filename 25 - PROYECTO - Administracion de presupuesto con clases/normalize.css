@@ -1,0 +1,197 @@
+@font-face {
+    font-family: 'letra';
+    src: url(letra.woff2);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+body{
+    background: linear-gradient(to right, #08f 30%, rgb(3, 3, 131))
+}
+
+.header{
+    width: 70%;
+    margin: auto;
+    font-size: 25px;
+    color: rgb(211, 207, 245);
+    text-align: center;
+    padding: 20px;
+}
+
+.container{
+    width: 70%;
+    background-color: #fff;
+    margin: auto;
+    padding: 30px;
+    display: flex;
+    border-radius: 20px;
+}
+
+.container__formulario{
+    width: 50%;
+    /* background-color: chartreuse; */
+    padding: 10px;
+}
+
+.formulario-title{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(76, 92, 92);
+}
+
+.formulario-label{
+    margin: 20px auto;
+    display: block;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.formulario-label input{
+    width: 90%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 5px;
+    border: 1px solid #888;
+}
+
+.formulario-label input:focus{
+    outline: 2px solid rgba(5, 93, 170, 0.377);
+}
+
+.formulario-submit{
+    background-color: rgb(5, 93, 170);
+    color: #fff;
+    padding: 10px;
+    border: transparent;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.formulario-submit:hover{
+    background-color: rgb(3, 66, 121);
+}
+.formulario-submit:disabled{
+    background-color: rgb(105, 163, 214);
+}
+
+
+
+
+
+/* LISTA DE COSAS */
+.container__list{
+    width: 50%;
+    padding: 10px;
+}
+
+.list-title{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(76, 92, 92);
+}
+.list{
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.list-menu{
+    width: 90%;
+    margin: 20px auto;
+}
+
+#presupuesto, #restante{
+    display: block;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+#presupuesto{
+    color: rgb(0, 36, 68);
+    background-color: rgb(136, 197, 250);
+    margin: 10px 0;
+}
+
+span[data-color = 'bastante-capital']{
+    color: rgb(2, 68, 0);
+    background-color: rgb(167, 250, 146);
+}
+
+span[data-color = 'poco-capital']{
+    color: rgb(97, 90, 0);
+    background-color: rgb(248, 250, 146);
+}
+
+span[data-color = 'muy-poco-capital']{
+    color: rgb(68, 5, 0);
+    background-color: rgb(250, 146, 146);
+}
+
+
+
+/* MENSAJES DE ALERTA Y GASTOS */
+.error{
+    text-align: center;
+    background-color: rgb(245, 164, 164);
+    color: #f00;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+.correcto{
+    text-align: center;
+    background-color: rgb(180, 245, 164);
+    color: rgb(18, 134, 3);
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+
+.style-gasto{
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    list-style: none;
+    border: 1px #888 solid;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.style-gasto-cantidad{
+    box-sizing: content-box;
+    background-color: rgb(0, 81, 255);
+    color: #fff;
+    border-radius: 5px;
+    padding: 3px 5px;
+    font-weight: 600;
+}
+
+.style-gasto-boton{
+    padding: 7px;
+    background-color: #f00;
+    color: #fff;
+    border-radius: 3px;
+    border: transparent;
+    font-weight: 600;
+}
+.style-gasto-boton:hover{
+    background-color: rgb(199, 5, 5);
+}

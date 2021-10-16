@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-16">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interes Compuesto</title>
+
+    <!-- STYLES  -->
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-size: 16px;
+        }
+
+        body{
+            background-color: rgb(193, 248, 193);
+        }
+
+
+        .container{
+            display: flex;
+            height: 300px;
+            width: 80%;
+            margin: 70px auto;
+            justify-content: space-between;
+
+            /* border: 1px solid red; */
+
+        }
+
+        /* INPUTS Y BOTONES -- PARTE IZQUIERDA */
+
+        .container > div:first-child{
+            height: 100%;
+            width: 35%;
+        }
+
+        .container > div:last-child{
+            height: 100%;
+            width: 60%;
+        }
+
+        .container__dates{
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-evenly;
+            justify-content: center;
+            
+            height: 100%;
+            width: 100%;
+            border: 3px solid #0f0;
+            background-color: rgb(161, 243, 161);
+            border-radius: 15px;
+        }
+
+        .container__dates > div{
+            width: 100%;
+            height: auto;
+        }
+
+        div[class ^= 'container__dates-']{
+            width: 100%;
+            text-align: center;
+        }
+        div[class ^= 'container__dates-'] > span{
+            display: block;
+            font-weight: 600;
+        }
+
+        div[class ^= 'container__dates-'] > input{
+            width: 80%;
+            text-align: center;
+            padding: 3px;
+
+            background-color: transparent;
+            border: transparent;
+            border-bottom: 2px solid #0f0;
+        }
+
+        div[class ^= 'container__dates-'] > input:focus{
+            background: linear-gradient(to top, rgb(99, 245, 99), transparent);
+        }
+
+        #boton{
+            width: 100px;
+            border-radius: 50px;
+            height: 30px;
+            border: transparent;
+            background-color:rgb(161, 243, 161);
+            border: 1px solid #aaa;
+        }
+
+        #boton:hover{
+            background-color: black;
+            color: #fff;
+            transition: all .5s;
+        }
+
+
+        /* PANTALLA PARA MOSTRAR EL CONTENIDO */
+
+        .container__show{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            height: auto;
+            border: 2px solid #0f0;
+            margin-bottom: 40px;
+            background-color: rgb(183, 247, 183);
+        }
+
+        .container__show-item{
+            border: 1px solid #0f0;
+            padding: 4px;
+        }
+
+        .container__show-item:nth-child(1){
+            font-weight: 600;
+        }
+        .container__show-item:nth-child(2){
+            font-weight: 600;
+        }
+        .container__show-item:nth-child(3){
+            font-weight: 600;
+        }
+        .container__show-item:nth-child(4){
+            font-weight: 600;
+        }
+        .container__show-item:nth-child(5){
+            font-weight: 600;
+        }
+
+
+
+        /* RESPONSIVE WEB */
+        @media screen and (max-width: 730px){
+
+            .container{
+                height: auto;
+                width: 80%;
+                flex-direction: column;
+                margin: 70px auto;
+                justify-content: space-between;
+            }
+
+            .container > div:first-child{
+                width: 100%;
+                height: 300px;
+                margin: 20px 0;
+            }
+            .container > div:last-child{
+                width: 100%;
+                margin: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+
+        <!-- BLOQUE DE LOS INPUTS  -->
+        <div><div class="container__dates">
+            <!-- INPUT DEL CAPITAL -->
+            <div><div class = 'container__dates-capital'>
+                <span>Capital</span>
+                <input type="number" id = 'capital' min = '0'>
+            </div></div>
+
+            <!-- INPUT DEL PORCIENTO -->
+            <div><div class = 'container__dates-porciento'>
+                <span>Porcentaje</span>
+                <input type="number" id = 'porciento' min = '0'>
+            </div></div>
+
+            <!-- INPUT DEL TIEMPO-->
+            <div><div class = 'container__dates-tiempo'>
+                <span>Tiempo</span>
+                <input type="number" id = 'tiempo' min = '0'>
+            </div></div>
+
+            <!-- BOTON CALCULAR -->
+            <input type="button" value="Calcular" id = 'boton'>
+
+        </div></div>
+
+
+
+        <!-- BLOQUE DE LA VISTA DEL INTERES COMPUESTO -->
+        <div><div class="container__show">
+            <div class="container__show-item">Mes</div>
+            <div class="container__show-item">Capital</div>
+            <div class="container__show-item">Ganancia</div>
+            <div class="container__show-item">Total</div>
+            <div class="container__show-item">Gan. Neta</div>
+
+        </div></div>
+
+
+    </div>
+
+   
+
+</body>
+
+
+ <!-- SCRIPTS -->
+<script>
+
+var boton = document.getElementById('boton');
+var show = document.getElementsByClassName('container__show')[0];
+
+boton.addEventListener('click', CalcIC);
+
+function CalcIC(){
+
+    show.innerHTML = '<div class="container__show-item">Mes</div>';
+    show.innerHTML += '<div class="container__show-item">Capital</div>';
+    show.innerHTML += '<div class="container__show-item">Ganancia</div>';
+    show.innerHTML += '<div class="container__show-item">Total</div>';
+    show.innerHTML += '<div class="container__show-item">Gan. Neta</div>';
+
+
+
+    var capital_inicial = parseInt(document.getElementById('capital').value);
+    var porciento = document.getElementById('porciento').value / 100;
+    var tiempo = parseInt(document.getElementById('tiempo').value);
+
+    var ganancia = 0;
+    var capital = capital_inicial;
+
+    for(i = 1; i <= tiempo; i ++){
+        ganancia = Math.round(capital * porciento);
+        show.innerHTML += '<div class="container__show-item">' + i + '</div>';
+        show.innerHTML += '<div class="container__show-item">' + capital + '</div>';
+        show.innerHTML += '<div class="container__show-item">' + ganancia + '</div>';
+        show.innerHTML += '<div class="container__show-item">' + Math.round(capital + ganancia) + '</div>';
+        show.innerHTML += '<div class="container__show-item">' + Math.round(capital + ganancia - capital_inicial) + '</div>';
+        capital += ganancia;
+    }
+
+
+}
+
+</script>
+
+</html>

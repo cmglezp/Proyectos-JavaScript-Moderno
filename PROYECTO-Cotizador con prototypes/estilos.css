@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to right, #f0f -50%, rgb(240, 76, 35));
+}
+
+.header{
+    width: 80%;
+    min-width: 455px;
+    height: 40px;
+    margin: 50px auto 0;
+    
+    background-color: rgb(72, 202, 126);
+    text-align: center;
+    font-size: 8px;
+    line-height: 40px;
+    color: #fff;
+}
+
+
+
+.container{
+    width: 80%;
+    min-width: 455px;
+    height: auto;
+    margin: 0 auto;  
+    background-color: rgb(229, 253, 218);
+    padding: 10px;
+}
+
+.container__inputs{
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.inputs-label{
+    width: 70%;
+    padding: 10px;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.inputs-select{
+    width: 70%;
+    height: 40px;
+    float: center;
+    background-color: rgb(216, 228, 227);
+    border: 1px gray solid;
+    /* border: 0; */
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+
+/* ESTILOS DE LA PARTE DE ABAJO */
+.container__select{
+    width: 100%;
+    margin: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+.select-title{
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+input[type = 'radio'], .select-title{
+    vertical-align: middle;
+}
+
+
+.container-radio{
+    width: 35%;
+    margin: 20px auto;
+}
+
+.radio-title{
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 30px;
+
+}
+
+.radio-title:last-child{
+    float: right;
+}
+
+.container-submit{
+    background-color: rgb(72, 202, 126);
+    width: 35%;
+    height: 35px;
+    display: block;
+    margin: 30px auto 35px;
+    
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    border: 0;
+    border-radius: 2px;
+}
+
+/* MENSAJES DE ERROR O CORRECTO */
+.error{
+    background-color: rgb(238, 184, 177);
+    color: rgb(214, 16, 16);
+    border: 1px solid rgb(214, 16, 16);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 60%;
+    margin: 10px auto;
+}
+
+.correcto{
+    background-color: rgb(184, 238, 177);
+    color: rgb(49, 128, 34);
+    border: 1px solid rgb(43, 124, 27);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 60%;
+    margin: 10px auto;
+}
+
+.result{
+    width: 60%;
+    margin: 10px auto;
+    border: 1px solid rgb(0, 217, 255);
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.result-header{
+    background-color: rgb(42, 164, 185);
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.result span{
+    font-weight: 100;
+}
+
+
+
+/* RESPOSIVE WEB */
+
+@media screen and (max-width: 750px){
+    .container-radio{
+        width: 45%;
+    }
+}
